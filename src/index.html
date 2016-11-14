@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS App Example</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- build:css assets/css/styles.css -->
+    <link rel="stylesheet" href="assets/css/font-icons.css" type='text/css'>
+    <link rel="stylesheet" href="assets/css/animations.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="sections/home/home.css"/>
+    <link rel="stylesheet" href="directives/pulltorefresh.css"/>
+    <!-- endbuild -->
+</head>
+<body data-ng-app="app">
+<div class="highz">
+
+    <header id="site-header">
+        <div class="container">
+            <div class="pull-left logo">ANGULARJS <span class="alt">BY</span> EXAMPLE</div>
+
+        </div>
+    </header>
+
+    <section id="site-bar">
+        <div class="container">
+            <ul class="pull-right menu">
+                <li><a class="active">TO DO</a></li>
+                <li><a>DONE</a></li>
+                <li><a>OTHERS</a></li>
+            </ul>
+        </div>
+        <div class="page-loader" data-ng-show="bar.data.loading"><div class="throbber"></div></div>
+    </section>
+</div>
+
+    <section id="main" class="lowz">
+        <div class="container">
+            <ng-view></ng-view>
+        </div>
+    </section>
+
+    <!-- build:assets assets.min.js -->
+    <!-- ASSETS -->
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/angular-animate.min.js"></script>
+        <script src="assets/js/angular-cookies.min.js"></script>
+        <script src="assets/js/angular-route.min.js"></script>
+        <script src="assets/js/angular-touch.min.js"></script>
+        <script src="assets/js/moment.min.js"></script>
+        <script src="assets/js/angular-moment.min.js"></script>
+        <script src="assets/js/angular-truncate.js"></script>
+        <script src="assets/js/angular-preload-image.min.js"></script>
+    <!-- / -->
+    <!-- endbuild -->
+    <!-- build:js app.min.js -->
+    <!-- MODULES -->
+        <script src="app.routes.js"></script>
+        <script src="app.js"></script>
+    <!-- / -->
+    <!-- CONTROLLERS -->
+        <script src="sections/home/home.ctrl.js"></script>
+    <!-- / -->
+    <!-- DIRECTIVES -->
+        <script src="directives/pullToRefreshDirective.js"></script>
+    <!-- / -->
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+</html>

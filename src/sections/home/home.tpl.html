@@ -1,0 +1,13 @@
+<div ng-controller="HomeController">
+		<div pull-to-refresh update-fn="loadNewItems()" required-percentage = 0.3 bar-color = "'darkblue'">
+			<ul class="tutorials">
+				<li data-ng-repeat="tutorial in home.tutorials track by $index">
+					<div class="number">#{{$index + 1}}</div>
+					<h5>{{tutorial.task | uppercase}}</h5>
+					<a class="btn btn-lg btn-primary"><span
+							class="icon icon-arrow-up-right5"></span> View</a>
+					<div class="clearfix"></div>
+				</li>
+			</ul>
+		</div>
+</div>

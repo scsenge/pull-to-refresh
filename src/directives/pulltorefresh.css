@@ -1,0 +1,196 @@
+.scrollablecontainer {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.home-frame {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+    bottom: 0;
+    padding-top:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:0px;
+}
+
+.container {
+    height: 100%;
+}
+
+.tutorials {
+    margin: 0 0 !important;
+    padding: 0;
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pie {
+    background-color: aliceblue;
+    width: 40px;
+    height: 40px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.clip1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    clip: rect(0px, 50px, 50px, 20px);
+}
+
+.slice1 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    clip: rect(0px, 20px, 40px, 0px);
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    border: 3px solid #127ba3;
+}
+
+.clip2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    clip: rect(0, 20px, 40px, 0px);
+}
+
+.slice2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    clip: rect(0px, 40px, 40px, 20px);
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    border: 3px solid #127ba3;
+}
+
+
+.progress-bar-container {
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    margin-left: -20px;
+    z-index: 5;
+    -webkit-transition: -webkit-transform 200ms linear; /* Changed here */
+    -moz-transition: -moz-transform 200ms linear;
+    -o-transition: -o-transform 200ms linear;
+    transition: transform 200ms linear;
+}
+
+.cssload-speeding-wheel.ng-animate {
+    transition: 0s none;
+    -webkit-transition: 0s none;
+    animation: 0s none;
+    -webkit-animation: 0s none;
+}
+
+@-ms-keyframes spin {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cssload-container {
+    width: 100%;
+    height: 49px;
+    text-align: center;
+}
+
+.cssload-speeding-wheel {
+    width: 22px;
+    height: 22px;
+    top: 50%;
+    /* background-color: red; */
+    right: 50%;
+    margin-right: -11px;
+    margin-top: -11px;
+    position: absolute;
+    /* margin: 0 auto; */
+    border: 3px solid #127ba3;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    animation: spin 575ms infinite linear;
+    -o-animation: spin 575ms infinite linear;
+    -ms-animation: spin 575ms infinite linear;
+    /* -webkit-animation: spin 575ms infinite linear; */
+    -moz-animation: spin 575ms infinite linear;
+}
+
+.reloadicon{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-top: -10px;
+    margin-right: -10px;
+    font-size: 20px;
+}
+
+.highz {
+    position:relative;
+    z-index : 10 !important;
+}
+
+.lowz {
+    z-index : 1 !important;
+}
+
+.pull-to-refresh{
+    height:100%;
+}
