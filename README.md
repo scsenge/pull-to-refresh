@@ -13,7 +13,7 @@ or follow these steps:
 
   - clone this repository : 
    ```
-   git clone ...
+   git clone https://github.com/scsenge/pull-to-refresh.git
    ```
   - install dependencies : 
    ```
