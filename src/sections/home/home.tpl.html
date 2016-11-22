@@ -1,5 +1,5 @@
 <div ng-controller="HomeController">
-		<div pull-to-refresh update-fn="loadNewItems()" required-percentage = 0.3 bar-color = "'darkblue'" frame-top = 150>
+		<div pull-to-refresh update-fn="loadNewItems()" required-percentage = 0.3>
 			<ul class="tutorials">
 				<li data-ng-repeat="tutorial in home.tutorials track by $index">
 					<div class="number">#{{$index + 1}}</div>
