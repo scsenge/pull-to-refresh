@@ -15,15 +15,18 @@ or follow these steps:
    ```
    git clone https://github.com/scsenge/pull-to-refresh.git
    ```
+   ```
+   cd pull-to-refresh
+   ```
   - install dependencies : 
    ```
    npm install
    ```
   - run the application :
    ```
-   npm start 
+   gulp
    ```
-  - the result will be on http://localhost:8282/index.html`.
+  - the result will be on `http://localhost:8282/index.html`.
   
 
 
