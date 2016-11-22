@@ -23,7 +23,7 @@ or follow these steps:
    ```
    npm start 
    ```
-  - the result will be on localhost:8282
+  - the result will be on http://localhost:8282/index.html`.
   
 
 
