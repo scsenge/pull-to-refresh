@@ -10,9 +10,11 @@ function pullToRefresh() {
 			updateFn: '&',
 			refreshingInProgress: '=?',
 			barColor: '=?',
-			requiredPercentage: '=?'
+			requiredPercentage: '=?',
+			frameTop: '=?'
 		},
 		link: function (scope, element) {
+			configuration();
 			element.bind("touchend", onTouchEnd);
 			element.bind("touchmove", onTouchMove);
 			element.bind("touchstart", onTouchStart);
@@ -20,13 +22,16 @@ function pullToRefresh() {
 			element.bind("mousemove ", onMouseMove);
 			element.bind("mousedown ", onMouseStart);
 
-			scope.requiredPercentage = angular.isDefined(scope.requiredPercentage) ? scope.requiredPercentage : 0.25;
-			scope.barColor = angular.isDefined(scope.barColor) ? scope.barColor : "#127ba3";
+			function configuration() {
+				scope.requiredPercentage = angular.isDefined(scope.requiredPercentage) ? scope.requiredPercentage : 0.25;
+				scope.barColor = angular.isDefined(scope.barColor) ? scope.barColor : "#127ba3";
+				scope.frameTop = angular.isDefined(scope.frameTop) ? scope.frameTop : 100;
+				configureView();
 
-			overWriteColor();
+			};
 
-
-			function overWriteColor() {
+			function configureView() {
+				document.getElementsByClassName('home-frame')[0].style.top = scope.frameTop + 'px';
 				document.getElementsByClassName('slice1')[0].style.borderColor = scope.barColor;
 				document.getElementsByClassName('slice2')[0].style.borderColor = scope.barColor;
 				document.getElementsByClassName('cssload-speeding-wheel')[0].style.borderLeftColor = scope.barColor;
@@ -48,13 +53,13 @@ function pullToRefresh() {
 							this.refreshStartPosition = this.currentMousePosition;
 						}
 					} else {
-						progressBarUpdate(this.refreshStartPosition,this.currentMousePosition, windowHeight);
+						progressBarUpdate(this.refreshStartPosition, this.currentMousePosition, windowHeight);
 					}
 				}
 			}
 
 			function onTouchMove(event) {
-				var windowHeight =  window.innerHeight;
+				var windowHeight = window.innerHeight;
 				this.currentMousePosition = event.changedTouches[0].clientY;
 				if(!this.reachedTheTop) {
 					var allowUp = (document.getElementsByClassName('scrollablecontainer')[0].scrollTop > 1);
@@ -112,8 +117,8 @@ function pullToRefresh() {
 				this.slideBeginY = event.changedTouches[0].pageY;
 			}
 
-			function isRefreshNeeded(currentMousePosition,refreshStartPosition) {
-				var w =  window.innerHeight;
+			function isRefreshNeeded(currentMousePosition, refreshStartPosition) {
+				var w = window.innerHeight;
 				return (currentMousePosition - refreshStartPosition) > w * scope.requiredPercentage;
 			}
 
@@ -138,14 +143,14 @@ function pullToRefresh() {
 
 			function progressBarToRefreshPosition() {
 				scope.refreshingInProgress = true;
-				var refreshingPlace = -40 +  window.innerHeight * scope.requiredPercentage;
+				var refreshingPlace = -40 + window.innerHeight * scope.requiredPercentage;
 				setProgressBarPosition(refreshingPlace);
 			}
 
 			function setProgressBarPosition(pulledDown) {
 				var pbelement = document.getElementsByClassName("progress-bar-container");
 				//progress-bar-position
-				var translation = Math.min(pulledDown,  window.innerHeight * scope.requiredPercentage) + Math.max(pulledDown -  window.innerHeight * scope.requiredPercentage, 0) * 0.1;
+				var translation = Math.min(pulledDown, window.innerHeight * scope.requiredPercentage) + Math.max(pulledDown - window.innerHeight * scope.requiredPercentage, 0) * 0.1;
 				pbelement[0].style.transform = 'translate(0px,' + translation + 'px)';
 				pbelement[0].style.webkitTransform = 'translate(0px,' + translation + 'px)';
 				pbelement[0].style.MozTransform = 'translate(0px,' + translation + 'px)';
