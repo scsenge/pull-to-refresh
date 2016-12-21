@@ -1,5 +1,5 @@
-Pull to refresh directive
-
+Pull to refresh directive 
+Read the entire process here: bit.ly/AngularPullToRefresh
 
 Contributing
 ===
